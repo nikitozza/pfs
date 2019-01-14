@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="content-Type" content="text/html" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="демо кликбейт">
+    <meta name="author" content="nikitozza">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
+    <title>демо кликбейт</title>
+    <script>
+        function showBtcUsd() {
+            document.getElementById('usdrubcont').style.display = 'none';
+            document.getElementById('spx500cont').style.display = 'none';
+            document.getElementById('gifbuy').style.display = 'flex';
+            setTimeout(showBuyDeal, 3300)
+        }
+
+        function showBuyDeal() {
+            document.getElementById('buycont').style.display = 'flex';
+        }
+
+        function purchase() {
+            document.getElementById('gifbuy').style.display = 'none';
+            document.getElementById('buycont').style.display = 'none';
+            document.getElementById('purchase1000').style.display = 'flex';
+            setTimeout(showSellgif, 2200)
+        }
+
+        function showSellgif() {
+            document.getElementById('purchase1000').style.display = 'none';
+            document.getElementById('gifsell').style.display = 'flex';
+            setTimeout(showSellDeal, 3300)
+
+        }
+
+        function showSellDeal() {
+            document.getElementById('sellcont').style.display = 'flex';
+        }
+
+        function sellOut() {
+            document.getElementById('gifsell').style.display = 'none';
+            document.getElementById('sellcont').style.display = 'none';
+            document.getElementById('congrats').style.display = 'flex';
+            setTimeout(finale, 2200)
+
+        }
+
+        function finale() {
+            document.getElementById('heading').style.display = 'none';
+            document.getElementById('btnrow').style.display = 'none';
+            document.getElementById('congrats').style.display = 'none';
+            document.getElementById('exness').style.display = 'flex'
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3 id="heading" class="text-center">ВЫБЕРИ ВАЛЮТНУЮ ПАРУ</h3>
+        <div id="btnrow" class="row mt-3 p-1 border border-dark rounded d-flex justify-content-center ">
+            <div display=" initial " id="usdrubcont" class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 border border-dark rounded ">
+                <a display=" initial " id="usdrub" title="+ " type="button " class="btn btn-dark btn-sm active btn-block " role="button " aria-pressed="true " onclick="">
+                   USD / RUB
+                </a>
+
+            </div>
+            <div display=" initial " id="btcusdcont" class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 border border-dark rounded ">
+                <a display=" initial " id="btcusd" title="+ " type="button " class="btn btn-dark btn-sm active btn-block" role="button " aria-pressed="true " onclick="showBtcUsd(this)">
+                    <!--здесь еще бы сделать так, чтобы после исчезновения лишних кнопок, текущая растягивалась во всю ширь-->
+                    BTC / USD
+                </a>
+            </div>
+
+
+            <div display=" initial " id="spx500cont" class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 border border-dark rounded">
+                <a display=" initial " id="spx500" title="+ " type="button " class="btn btn-dark btn-sm active btn-block" role="button " aria-pressed="true " onclick="">
+                   SPX500 / USD
+                </a>
+            </div>
+
+
+        </div>
+        <div class="row mt-3 p-1 border border-dark rounded justify-content-center ">
+            <div style="display:none" id="gifbuy">
+                <img src="pix/gifka.gif" alt="candles">
+            </div>
+            <div style="display:none" id="gifsell">
+                <img src="pix/gifka2.gif" alt="candles">
+            </div>
+            <div style="display:none" id="exness">
+                <a href="https://www.exness.com/intl/ru/">
+                    <img src="pix/exness.png" alt="exness">
+                </a>
+            </div>
+        </div>
+        <div style="display:none" id="buycont" class="row mt-3 p-1 border border-dark rounded justify-content-center ">
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 border border-dark rounded">
+                <h4>ВЫГОДНАЯ СДЕЛКА!</h4>
+                <br>
+
+                <h5>КУПИТЕ СЕЙЧАС!</h5>
+            </div>
+
+            <a id="buyxxx" title="+ " type="button " class="btn btn-dark btn-sm active " role="button " aria-pressed="true " onclick="purchase(this)">
+                       Купить 1000 USD
+                    </a>
+
+
+            <a id="buyyyy" title="+ " type="button " class="btn btn-dark btn-sm active " role="button " aria-pressed="true " onclick="">
+                           Купить 2000 USD
+                        </a>
+
+        </div>
+        <div style="display:none" id="sellcont" class="row mt-3 p-1 border border-dark rounded justify-content-center ">
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 border border-dark rounded">
+                <h4>ВЫГОДНАЯ СДЕЛКА!</h4>
+                <br>
+
+                <h5>ПРОДАЙТЕ СЕЙЧАС!</h5>
+            </div>
+
+            <a id="sellxxx" title="+ " type="button " class="btn btn-dark btn-sm active " role="button " aria-pressed="true " onclick="sellOut(this)">
+                           Продать сейчас
+                        </a>
+
+
+
+
+        </div>
+        <div style="display:none" id="purchase1000" class="row mt-3 p-1 border border-dark rounded justify-content-center ">
+            Вы купили $1000
+        </div>
+        <div style="display:none" id="sell1000" class="row mt-3 p-1 border border-dark rounded justify-content-center ">
+            Вы продали $1000
+        </div>
+        <div style="display:none" id="congrats" class="row mt-3 p-1 border border-dark rounded justify-content-center ">
+            Поздравляем! Вы заработали $100500
+        </div>
+
+    </div>
+</body>
+
+
+</html>
